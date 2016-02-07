@@ -142,6 +142,25 @@ brew_install_or_upgrade 'go'
 brew_install_or_upgrade 'ngrok'
 brew_install_or_upgrade 'watch'
 
+fancy_echo "Updating Docker ..."
+brew install Caskroom/cask/dockertoolbox
+
+default_docker_machine() {
+  docker-machine ls | grep -Fq "default"
+}
+
+if ! default_docker_machine; then
+  docker-machine create --driver virtualbox default
+fi
+
+default_docker_machine_running() {
+  default_docker_machine | grep -Fq "Running"
+}
+
+if ! default_docker_machine_running; then
+  docker-machine start default
+fi
+
 fancy_echo "Cleaning up old Homebrew formulae ..."
 brew cleanup
 brew cask cleanup
