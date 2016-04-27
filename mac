@@ -131,8 +131,8 @@ brew "ruby-build"
 
 # Databases
 brew "postgres", restart_service: true
-brew "cassandra"
-brew "elasticsearch"
+brew "cassandra21"
+brew "elasticsearch22"
 EOF
 
 fancy_echo "Configuring Ruby ..."
