@@ -25,14 +25,14 @@ Install
 Download, review, then execute the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+curl --remote-name https://raw.githubusercontent.com/sstgithub/laptop/master/mac
 less mac
 sh mac 2>&1 | tee ~/laptop.log
 ```
 
-Optionally, [install thoughtbot/dotfiles][dotfiles].
+Optionally, [install thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles#install)
 
-[dotfiles]: https://github.com/thoughtbot/dotfiles#install
+Download chromedriver from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads) and move file to `/usr/local/bin`
 
 Debugging
 ---------
