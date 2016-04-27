@@ -131,16 +131,16 @@ brew "ruby-build"
 
 # Databases
 brew "postgres", restart_service: true
-brew "cassandra"
-brew "elasticsearch"
+##install cassandra v2.1.4 (see: http://stackoverflow.com/a/7787703)
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/d3e6cb16e13143b8b599e5803e411be6e8c8c271/Formula/cassandra.rb
+##install elasticsearch v2.1.0 (see: http://stackoverflow.com/a/7787703)
+brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2c6cbe0c86a35c76a8201238bd8c0e9a1e24f57/Formula/elasticsearch.rb
+brew list --versions #show all brew packages and versions installed
 EOF
 
 fancy_echo "Configuring Ruby ..."
-find_latest_ruby() {
-  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-}
 
-ruby_version="$(find_latest_ruby)"
+ruby_version="2.2.1"
 # shellcheck disable=SC2016
 append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
 eval "$(rbenv init -)"
