@@ -121,7 +121,8 @@ brew "hub"
 brew "imagemagick"
 
 # Testing
-brew "qt"
+#brew "qt" ##Not using capybara-webkit
+brew "phantomjs"
 
 # Programming languages
 brew "libyaml" # should come after openssl
