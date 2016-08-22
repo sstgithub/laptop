@@ -95,9 +95,8 @@ fi
 
 fancy_echo "Updating Homebrew formulae ..."
 brew update
-brew bundle --file=- <<EOF
-tap "thoughtbot/formulae"
-tap "homebrew/services"
+brew tap "thoughtbot/formulae"
+brew tap "homebrew/services"
 
 # Unix
 brew "ctags"
